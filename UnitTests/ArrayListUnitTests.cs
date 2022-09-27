@@ -7,7 +7,7 @@ namespace UnitTests
     [TestClass]
     public class UnitTests
     {
-        
+
         [TestMethod]
         public void TestLength()
         {
@@ -22,7 +22,7 @@ namespace UnitTests
 
             Assert.AreEqual(10, list.Length);
 
-            for (int i =0; i < 32; i++)
+            for (int i = 0; i < 32; i++)
             {
                 list.Append(i);
             }
@@ -142,7 +142,7 @@ namespace UnitTests
 
             list = new ArrayList();
 
-            for (int i = 9; i >=0; i--)
+            for (int i = 9; i >= 0; i--)
             {
                 list.Prepend(i);
                 Assert.AreEqual(i, list.First);
@@ -206,7 +206,7 @@ namespace UnitTests
             list.InsertAt(52, 3);
             Assert.AreEqual("[42,0,1,52,2,3,4]", list.ToString().Replace(" ", ""));
 
-            list.InsertAt(62, list.Length-1);
+            list.InsertAt(62, list.Length - 1);
             Assert.AreEqual("[42,0,1,52,2,3,62,4]", list.ToString().Replace(" ", ""));
 
             list.InsertAt(72, list.Length);
@@ -341,7 +341,7 @@ namespace UnitTests
             list.Clear();
             Assert.AreEqual(0, list.Length);
 
-            
+
 
             for (int i = 0; i < 64; i++)
             {
@@ -381,7 +381,7 @@ namespace UnitTests
             Assert.AreEqual(0, list.Get(0));
             Assert.AreEqual(1, list.Get(1));
             Assert.AreEqual(2, list.Get(2));
-            
+
             for (int i = 5; i < 50; i++)
             {
                 list.Append(i);
