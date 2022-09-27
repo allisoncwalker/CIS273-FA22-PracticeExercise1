@@ -173,6 +173,7 @@ namespace PracticeExercise1
                 array[index] = value;
                 length++;
             }
+        }
 
         /// <summary>
         /// Add value to beginning of list
@@ -308,7 +309,6 @@ namespace PracticeExercise1
         {
             Array.Resize(ref array, 2 * array.Length);
         }
-
     }
 }
 
