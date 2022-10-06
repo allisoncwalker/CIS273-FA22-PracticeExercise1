@@ -33,17 +33,7 @@ namespace PracticeExercise1
         /// <summary>
         /// Returns last element in list, null if empty.
         /// </summary>
-        public int? Last
-        {
-            get
-            {
-                if (IsEmpty)
-                {
-                    throw new NullReferenceException();
-                }
-                return array[length - 1];
-            }
-        }
+        public int? Last { get => IsEmpty ? null : array[length - 1]; }
 
         /// <summary>
         /// Returns true if list is has no elements; false otherwise.
@@ -218,17 +208,16 @@ namespace PracticeExercise1
         /// <param name="value">value of item to be removed</param>
         public void Remove(int value)
         {
-            int indexOfValueToRemove = FirstIndexOf(value);
+            int index = FirstIndexOf(value);
 
-            if (indexOfValueToRemove == -1)
+            if (index == -1 || length == 0)
             {
                 return;
             }
+
             else
             {
-                ShiftLeft(indexOfValueToRemove);
-                length--;
-                return;
+                RemoveAt(index);
             }
         }
 
