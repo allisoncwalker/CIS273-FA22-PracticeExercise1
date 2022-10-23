@@ -208,18 +208,16 @@ namespace PracticeExercise1
         /// <param name="value">value of item to be removed</param>
         public void Remove(int value)
         {
-            int index = FirstIndexOf(value);
 
-            if (index == -1 || length == 0)
+            int val = FirstIndexOf(value);
+            if (val != -1)
             {
-                return;
+                RemoveAt(val);
             }
 
-            else
-            {
-                RemoveAt(index);
-            }
+
         }
+
 
         // TODO
         /// <summary>
@@ -228,11 +226,16 @@ namespace PracticeExercise1
         /// <param name="index"></param>
         public void RemoveAt(int index)
         {
-            if (index < 0 || index > length - 1)
+            if (index > Length - 1 || index < 0)
             {
                 throw new IndexOutOfRangeException();
             }
-            Remove(array[index]);
+
+            else
+            {
+                ShiftLeft(index);
+                length--;
+            }
         }
 
         public override string ToString()
